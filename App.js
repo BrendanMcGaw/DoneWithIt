@@ -1,8 +1,4 @@
 import { 
-  StatusBar,
- } from 'expo-status-bar';
-
-import { 
   SafeAreaProvider, 
   useSafeAreaInsets 
 } from "react-native-safe-area-context";
@@ -19,19 +15,14 @@ import {
   Image,
   Button,
   Alert,
+  StatusBar,
 } from 'react-native';
 
 function SafeScreen() {
   const insets = useSafeAreaInsets();
   return (
-    <View style={{ 
-      flex: 1,
-      paddingTop:insets.top,
-      backgroundColor: 'dodgerblue',
-      justifyContent: 'center',
-      alignItems: 'center'
-      }}>
-        <Text style={styles.fontStyle}>Hello React Native.</Text>
+    <View style={styles.container}>
+        <Text style={styles.fontStyle}>Hello React Native. What ift hjerre weremorwewords</Text>
 
         <TouchableHighlight onPress={() => 
           Alert.alert("Question", "Do you like this image?", [
@@ -64,7 +55,6 @@ function SafeScreen() {
             )
           }
         />
-
     </View>
   )
 }
@@ -82,8 +72,9 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'dodgerblue',
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    justifyContent: "center",
+    alignItems: "center",
   },
-
   fontStyle: {
     fontSize: 16,
   }
